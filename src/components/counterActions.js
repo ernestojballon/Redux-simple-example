@@ -1,12 +1,13 @@
 import React from "react";  
+import { useDispatch } from 'react-redux'
+import { decrement, increment } from '../state/counterSlice'
 
-const CounterActions = (props) => {
-  const { increment, decrement } = props;
-
+const CounterActions = () => {
+  const dispatch = useDispatch()
   return (
     <div>
-      <button onClick={decrement}>-</button>
-      <button onClick={increment}>+</button>
+      <button onClick={() => dispatch(decrement())}>-</button>
+      <button onClick={() => dispatch(increment())}>+</button>
     </div>
   );
 }

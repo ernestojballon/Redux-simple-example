@@ -1,8 +1,8 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux'
 
-const CounterDisplay = (props) => {
-  const { counter } = props;
-  
+const CounterDisplay = () => {
+  const counter = useSelector((state) => state.counter.value)
   return (
     <div>
       <h1>Counter value = {counter}</h1>
